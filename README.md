@@ -54,5 +54,12 @@ Workflow:
 •	CORS Errors: Verify config/cors.php allows frontend origin
 •	Token Issues: Ensure token is properly stored/sent
 •	Illegal Offset Type: Likely config/auth.php issue (non-string defaults.guard, invalid guard/provider)
-Solution: Trace errors, use dd(), logs, inspect config files
+Solution: Trace errors, use dd(), logs, inspect config 3. Technical Accuracy
+
+5. Technical Accuracy
+The technical steps remain accurate:
+	•	Backend runs via php -S localhost:8000 -t public.
+	•	Frontend runs with php artisan serve --port=8001.
+	•	It notes that both servers must stay running and that production setup differs, which is essential.
+
 
