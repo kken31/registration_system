@@ -63,7 +63,7 @@ class FrontendUserController extends Controller
         if ($response->successful()) {
             return redirect()->route('frontend.users.index')->with('success', 'User created successfully!');
         } else {
-            $errors = $response->json()['errors'] ?? ['api_error' => ['Failed to create user. API Error: ' . $response->status()]];
+            $errors = $response->json()['errors'] ?? ['api_error' => ['Email has already been taken!']];
             if (isset($response->json()['message']) && !isset($response->json()['errors'])) {
                 $errors = ['api_error' => [$response->json()['message']]];
             }

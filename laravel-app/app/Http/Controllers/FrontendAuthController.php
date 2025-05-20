@@ -73,7 +73,7 @@ class FrontendAuthController extends Controller
             Session::put('user_name', $response->json()['user']['name']);
             return redirect()->route('frontend.users.index')->with('success', 'Registration successful! You are now logged in.');
         } else {
-            $errors = $response->json()['errors'] ?? ['registration' => ['Registration failed. Please try again.']];
+            $errors = $response->json()['errors'] ?? ['registration' => ['Email has already been taken!. Please try again.']];
             if (isset($response->json()['message']) && !isset($response->json()['errors'])) {
                 $errors = ['registration' => [$response->json()['message']]];
             }
