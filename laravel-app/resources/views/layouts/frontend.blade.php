@@ -18,15 +18,15 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     @if(Session::has('api_token'))
-                    <li class="nav-item">
-                        <span class="navbar-text me-3">
+                    <li class="nav-item d-flex align-items-center">
+                        <span class="navbar-text me-3 pt-6">
                             Welcome, {{ Session::get('user_name', 'User') }}
                         </span>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item d-flex align-items-center">
                         <a class="nav-link" href="{{ route('frontend.users.index') }}">Manage Users</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item d-flex align-items-center">
                         <form method="POST" action="{{ route('frontend.logout') }}">
                             @csrf
                             <button type="submit" class="btn btn-link nav-link">Logout</button>
@@ -34,10 +34,10 @@
                     </li>
                     @else
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('frontend.login.form') }}">Login</a>
+                        <a class="nav-link btn btn-primary text-white me-2" href="{{ route('frontend.login.form') }}">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('frontend.register.form') }}">Register</a>
+                        <a class="nav-link btn btn-primary text-white" href="{{ route('frontend.register.form') }}">Register</a>
                     </li>
                     @endif
                 </ul>
